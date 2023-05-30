@@ -1,4 +1,6 @@
+import 'package:buttom_navigation/theme/app_theme.dart';
 import 'package:buttom_navigation/view/dashboard_view.dart';
+import 'package:buttom_navigation/view/home_view.dart';
 import 'package:flutter/material.dart';
 
 
@@ -8,9 +10,20 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Dashboard_view(),
+      title: "font and theme",
+      theme: AppTheme.getApplicationTheme(),
+        
+      
+      initialRoute: '/',
+      routes: {
+        '/': (context)=> const Dashboard_view(),
+        '/homeroute':(context) => const Home_view(),
+        // '/profileroute'
+
+      },
+      
     );
   }
 }
